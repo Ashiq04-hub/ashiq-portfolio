@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#111318"/>
+  <rect x="40" y="40" width="720" height="370" stroke="#185fa5" stroke-width="2" fill="#1d2024"/>
+  <text x="60" y="80" fill="#a4c9ff" font-family="monospace" font-size="20" font-weight="bold">Library Management System</text>
+  <rect x="60" y="110" width="200" height="120" stroke="#68dbae" stroke-width="1" fill="#272a2f"/>
+  <rect x="280" y="110" width="200" height="120" stroke="#68dbae" stroke-width="1" fill="#272a2f"/>
+  <rect x="500" y="110" width="240" height="120" stroke="#68dbae" stroke-width="1" fill="#272a2f"/>
+  <text x="70" y="140" fill="#68dbae" font-family="monospace" font-size="12">Borrow</text>
+  <text x="290" y="140" fill="#68dbae" font-family="monospace" font-size="12">Return</text>
+  <text x="510" y="140" fill="#68dbae" font-family="monospace" font-size="12">Penalties</text>
+  <rect x="60" y="260" width="680" height="120" stroke="#185fa5" stroke-width="1" fill="#272a2f"/>
+  <text x="70" y="290" fill="#c2c6d2" font-family="monospace" font-size="14">Access + VBA + SQL</text>
+</svg>

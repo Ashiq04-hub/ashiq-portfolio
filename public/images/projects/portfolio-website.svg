@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#111318"/>
+  <rect x="40" y="40" width="720" height="370" stroke="#185fa5" stroke-width="2" fill="#1d2024"/>
+  <rect x="40" y="40" width="720" height="50" fill="#185fa5"/>
+  <text x="60" y="72" fill="#e1e2e9" font-family="monospace" font-size="16" font-weight="bold">ashiq.dev</text>
+  <rect x="60" y="120" width="300" height="260" stroke="#68dbae" stroke-width="2" fill="#272a2f"/>
+  <text x="80" y="160" fill="#a4c9ff" font-family="monospace" font-size="22" font-weight="bold">Ashiq Alsinawi</text>
+  <text x="80" y="190" fill="#68dbae" font-family="monospace" font-size="14">Aspiring Software Engineer</text>
+  <rect x="80" y="210" width="120" height="32" fill="#185fa5"/>
+  <text x="95" y="232" fill="#e1e2e9" font-family="monospace" font-size="12">Projects</text>
+  <rect x="400" y="120" width="320" height="120" stroke="#185fa5" fill="#272a2f"/>
+  <rect x="400" y="260" width="320" height="120" stroke="#185fa5" fill="#272a2f"/>
+  <text x="420" y="150" fill="#c2c6d2" font-family="monospace" font-size="12">Next.js + TypeScript</text>
+</svg>
