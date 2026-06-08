@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { About } from "@/components/sections/About";
 import { Education } from "@/components/sections/Education";
+import { Achievements } from "@/components/sections/Achievements";
 
 export default function AboutPage() {
   return (
@@ -10,6 +11,7 @@ export default function AboutPage() {
       <main id="main-content">
         <About />
         <Education />
+        <Achievements />
       </main>
       <Footer />
     </>

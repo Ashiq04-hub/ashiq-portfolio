@@ -1,5 +1,6 @@
 import type {
   About,
+  Achievement,
   Education,
   Project,
   SiteInfo,
@@ -48,7 +49,7 @@ export const about: About = {
 export const education: Education = {
   university: "Arellano University",
   degree: "Bachelor of Science in Computer Science",
-  period: "2022 – 2026",
+  period: "2022 – 2027 (Expected)",
   highlights: [
     "Studying core computer science fundamentals including data structures, algorithms, and software engineering",
     "Developing practical projects across desktop, web, and database technologies",
@@ -212,3 +213,46 @@ export const projects: Project[] = [
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
+
+export const achievements: Achievement[] = [
+  {
+    title: "Dean's Lister",
+    organization: "Arellano University",
+    description:
+      "Awarded Dean's List recognition for 4 consecutive years for academic excellence.",
+    year: "2022 - 2026",
+    type: "award",
+  },
+  {
+    title: "Cloud Computing Fundamentals",
+    organization: "IBM SkillsBuild",
+    description:
+      "Completed IBM SkillsBuild learning path on Cloud Computing Fundamentals.",
+    year: "2024",
+    type: "certificate",
+  },
+  {
+    title: "Digital Literacy",
+    organization: "IBM SkillsBuild",
+    description:
+      "Completed IBM SkillsBuild certification in Digital Literacy.",
+    year: "2024",
+    type: "certificate",
+  },
+  {
+    title: "Information Technology Fundamentals",
+    organization: "IBM SkillsBuild",
+    description:
+      "Completed IBM SkillsBuild certification in Information Technology Fundamentals.",
+    year: "2024",
+    type: "certificate",
+  },
+  {
+    title: "User Experience Design Fundamentals",
+    organization: "IBM SkillsBuild",
+    description:
+      "Completed IBM SkillsBuild certification in User Experience Design Fundamentals.",
+    year: "2024",
+    type: "certificate",
+  },
+];

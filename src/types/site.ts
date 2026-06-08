@@ -43,3 +43,13 @@ export interface ValueProposition {
   description: string;
   icon: string;
 }
+
+export type AchievementType = "award" | "certificate";
+
+export interface Achievement {
+  title: string;
+  organization: string;
+  description: string;
+  year: string;
+  type: AchievementType;
+}
