@@ -153,7 +153,7 @@ export const projects: Project[] = [
     githubUrl: null,
     liveUrl: null,
     screenshot: {
-      src: "/images/projects/library-management.svg",
+      src: "/images/projects/library_system.png",
       alt: "Public Library Management System project screenshot",
     },
     featured: true,
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     githubUrl: null,
     liveUrl: null,
     screenshot: {
-      src: "/images/projects/weather-forecasting.svg",
+      src: "/images/projects/weather_app.png",
       alt: "Weather Forecasting Application project screenshot",
     },
     featured: true,
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     githubUrl: null,
     liveUrl: null,
     screenshot: {
-      src: "/images/projects/online-voting.svg",
+      src: "/images/projects/voting_system.png",
       alt: "Online Voting System project screenshot",
     },
     featured: true,
