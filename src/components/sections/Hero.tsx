@@ -216,7 +216,7 @@ export function Hero() {
             </HeroMotion>
             <HeroMotion delay={0.3}>
               <p className="mt-4 font-mono text-sm font-semibold uppercase tracking-[0.25em] text-[#1D9E75] md:text-base">
-                Aspiring Software Engineer
+                Junior Software Engineer
               </p>
             </HeroMotion>
             <HeroMotion delay={0.4}>

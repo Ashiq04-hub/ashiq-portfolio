@@ -21,6 +21,8 @@ export function Contact() {
     message: string;
   } | null>(null);
 
+  const [remaining, setRemaining] = useState<number | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -42,19 +44,33 @@ export function Contact() {
 
       const result = await response.json();
 
-      if (!response.ok) {
+      // Rate limited
+      if (response.status === 429) {
+        setRemaining(0);
         setSubmitStatus({
           type: "error",
-          message: result.message ?? "Failed to send message. Please try again.",
+          message: result.error ?? "You've reached the daily limit. Please try again later.",
         });
         return;
       }
 
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent successfully. I'll get back to you soon.",
-      });
-      reset();
+      if (!response.ok) {
+        setSubmitStatus({
+          type: "error",
+          message: result.error ?? result.message ?? "Failed to send message. Please try again.",
+        });
+        return;
+      }
+
+      // Success
+      if (result.success) {
+        setRemaining(result.remaining);
+        setSubmitStatus({
+          type: "success",
+          message: result.message ?? "Message sent successfully. I'll get back to you soon.",
+        });
+        reset();
+      }
     } catch {
       setSubmitStatus({
         type: "error",
@@ -62,6 +78,8 @@ export function Contact() {
       });
     }
   };
+
+  const isLimitReached = remaining === 0;
 
   return (
     <SectionWrapper id="contact">
@@ -118,7 +136,35 @@ export function Contact() {
 
         <ScrollRevealItem className="lg:col-span-7">
           <Card>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+            {/* position: relative so the honeypot's absolute positioning is contained */}
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col gap-5"
+              style={{ position: "relative" }}
+            >
+              {/* Honeypot field — hidden from humans, filled by bots */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  top: "-9999px",
+                  opacity: 0,
+                  pointerEvents: "none",
+                  height: 0,
+                  overflow: "hidden",
+                }}
+              >
+                <label htmlFor="website">Website (do not fill this in)</label>
+                <input
+                  id="website"
+                  type="text"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  {...register("website")}
+                />
+              </div>
+
               <Input
                 label="Name"
                 placeholder="Your name"
@@ -158,9 +204,43 @@ export function Contact() {
                 </p>
               )}
 
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
+              <Button
+                type="submit"
+                disabled={isSubmitting || isLimitReached}
+                className={isLimitReached ? "opacity-50 cursor-not-allowed" : ""}
+              >
+                {isLimitReached
+                  ? "Limit Reached"
+                  : isSubmitting
+                  ? "Sending..."
+                  : "Send Message"}
               </Button>
+
+              {remaining !== null && remaining > 0 && (
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  {remaining} message{remaining !== 1 ? "s" : ""} remaining today
+                </p>
+              )}
+
+              {isLimitReached && (
+                <p className="text-xs text-amber-400 text-center mt-2 flex items-center justify-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  Daily limit reached. Come back tomorrow.
+                </p>
+              )}
             </form>
           </Card>
         </ScrollRevealItem>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "./BrandIcons";
 import type { Project } from "@/types";
 import { Card } from "./Card";
@@ -12,7 +11,6 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const githubHref = project.githubUrl || "#";
-  const liveHref = project.liveUrl || "#";
   const isExternalLink = (href: string) => href !== "#";
 
   const linkButtonClass =
@@ -71,16 +69,28 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <GitHubIcon width={14} height={14} />
           GitHub
         </a>
-        <a
-          href={liveHref}
-          className={linkButtonClass}
-          {...(isExternalLink(liveHref)
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
+        <span
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-gray-800/60 text-gray-500 border border-gray-700/50 cursor-not-allowed select-none"
+          title="This is a desktop application — no live demo available"
+          aria-label="Desktop application — no live demo available"
         >
-          <ExternalLink size={14} />
-          Live Demo
-        </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+          Desktop App
+        </span>
       </div>
     </Card>
   );

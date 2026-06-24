@@ -11,7 +11,7 @@ import type {
 
 export const siteInfo: SiteInfo = {
   name: "Ashiq Alsinawi",
-  title: "Aspiring Software Engineer",
+  title: "Junior Software Engineer",
   tagline:
     "Building scalable software solutions through clean code and continuous learning.",
   email: "ashiqenriquez@gmail.com",
@@ -42,7 +42,7 @@ export const about: About = {
     "To become a full-stack software engineer and contribute to impactful technology products.",
   avatar: {
     src: "/images/ashiq.png",
-    alt: "Ashiq Alsinawi — Aspiring Software Engineer",
+    alt: "Ashiq Alsinawi — Junior Software Engineer",
   },
 };
 
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     id: "library-management",
     name: "Public Library Management System",
     description:
-      "A library management system designed to automate book borrowing, returns, penalty calculation, and user management for educational institutions.",
+      "A full-stack desktop system that manages book inventory, borrowing workflows, and user accounts for educational institutions. Features an automated overdue-fee calculator that computes fines based on the number of days past the due date.",
     features: [
       "Book Borrowing System",
       "Return Book Processing",
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     techStack: ["React", "Node.js", "PostgreSQL", "CSS"],
     status: "Completed",
     keyChallenge:
-      "Developed an automated penalty calculation system that computes overdue fines based on the number of days beyond the due date.",
+      "Designed and implemented the penalty calculation engine from scratch — it handles edge cases like partial days, weekends, and maximum fee caps.",
     githubUrl: null,
     liveUrl: null,
     screenshot: {
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     id: "weather-forecasting",
     name: "Weather Forecasting Application",
     description:
-      "A weather forecasting application that provides real-time weather information, temperature monitoring, and forecast predictions for different locations. The system helps users plan their activities by delivering accurate and up-to-date weather conditions.",
+      "A Python-powered desktop application that fetches live weather data and 5-day forecasts for any location worldwide. Displays temperature, humidity, wind speed, and condition summaries in a clean, readable interface.",
     features: [
       "Real-Time Weather Updates",
       "Temperature Monitoring",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     techStack: ["HTML", "CSS", "Python", "MongoDB"],
     status: "Completed",
     keyChallenge:
-      "Implemented API integration to retrieve and display live weather data while ensuring a smooth and user-friendly experience.",
+      "Integrated the OpenWeatherMap API and handled inconsistent JSON response shapes across different location types (city, ZIP code, coordinates).",
     githubUrl: null,
     liveUrl: null,
     screenshot: {
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     id: "online-voting",
     name: "Online Voting System",
     description:
-      "A secure online voting platform designed to streamline election processes and provide efficient vote management. The system allows users to cast votes electronically while maintaining transparency and accuracy.",
+      "A full-stack web application for managing secure, transparent elections. Voters authenticate before casting a single ballot, and results are tallied in real-time with a live dashboard for administrators.",
     features: [
       "User Authentication",
       "Secure Voting Process",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     techStack: ["React", "Node.js", "MySQL", "CSS"],
     status: "Completed",
     keyChallenge:
-      "Developed a reliable voting workflow that prevents duplicate voting and ensures accurate vote counting.",
+      "Built the duplicate-vote prevention system using session tokens and database-level constraints to guarantee each verified user can only vote once.",
     githubUrl: null,
     liveUrl: null,
     screenshot: {
