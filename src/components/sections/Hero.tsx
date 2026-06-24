@@ -133,7 +133,7 @@ function HeroPhoto({ reduced }: { reduced: boolean }) {
         width={431}
         height={462}
         priority
-        sizes="(max-width: 1024px) 50vw, 560px"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="relative z-10 h-full min-h-[500px] w-auto object-contain object-bottom"
       />
     </div>

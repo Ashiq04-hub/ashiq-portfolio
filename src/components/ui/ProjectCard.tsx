@@ -23,6 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           src={project.screenshot.src}
           alt={project.screenshot.alt}
           fill
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover"
         />
       </div>
